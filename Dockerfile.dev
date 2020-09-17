@@ -1,0 +1,12 @@
+# Use an existing docker image as base
+FROM node:alpine
+#Specify Work Directory to copy files to in the docker container
+WORKDIR /usr/applications/reactfrontendjs
+# Copy only selected the file in the current directory to the docker container
+COPY ./package.json ./
+# Download and install a dependency
+RUN npm install
+# Copy all the files in the current directory to the docker container
+COPY ./ ./
+# Tell the image what to do when it starts as a container
+CMD ["npm", "start"]
