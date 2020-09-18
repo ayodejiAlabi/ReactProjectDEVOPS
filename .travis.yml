@@ -6,4 +6,19 @@ before_install:
   - docker build -t ayodejialabi/reactprojectdevops -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true ayodejialabi/reactprojectdevops npm run test
+  - docker run -e CI=true ayodejialabi/reactprojectdevops npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app:  "ReactProjectDevOPS"
+  env:  "Reactprojectdevops-env"
+  bucket_name:  "elasticbeanstalk-eu-central-1-014426655840"
+  bucket_path:  "ReactProjectDevOPS"
+  on:
+    branch: master
+  access_key_id: $AWS-Elasticbeanstalk-AccessKey
+  secret_access_key:
+    secure: "$AWS-Elasticbeanstalk-SecretKey"
+
+
