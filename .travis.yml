@@ -6,4 +6,4 @@ before_install:
   - docker build -t ayodejialabi/reactprojectdevops -f Dockerfile.dev .
 
 script:
-  - docker run ayodejialabi/reactprojectdevops npm run test -- --coverage
+  - docker run -e CI=true ayodejialabi/reactprojectdevops npm run test
