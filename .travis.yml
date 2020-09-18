@@ -19,6 +19,6 @@ deploy:
     branch: master
   access_key_id: $AWS-Elasticbeanstalk-AccessKey
   secret_access_key:
-    secure: "$AWS-Elasticbeanstalk-SecretKey"
+    secure: $AWS-Elasticbeanstalk-SecretKey
 
 
