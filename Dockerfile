@@ -14,5 +14,7 @@ RUN npm run build
 #2nd step to create production enviroment using nginx as web server
 # Use an existing docker image as base
 FROM nginx
+#Expose port inside docker container
+EXPOSE 80
 #copy build file from builder container to the production enviroment
 COPY --from=builder /usr/applications/reactfrontendjs/build /usr/share/nginx/html
