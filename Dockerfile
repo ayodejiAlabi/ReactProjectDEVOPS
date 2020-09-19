@@ -1,5 +1,5 @@
 # Use an existing docker image as base
-FROM node:alpine AS builder
+FROM node:alpine 
 #Specify Work Directory to copy files to in the docker container
 WORKDIR /usr/applications/reactfrontendjs
 # Copy only selected the file in the current directory to the docker container
@@ -17,4 +17,4 @@ FROM nginx
 #Expose port inside docker container
 EXPOSE 80
 #copy build file from builder container to the production enviroment
-COPY --from=builder /usr/applications/reactfrontendjs/build /usr/share/nginx/html
+COPY --from=0 /usr/applications/reactfrontendjs/build /usr/share/nginx/html
