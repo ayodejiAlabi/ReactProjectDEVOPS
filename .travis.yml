@@ -17,8 +17,8 @@ deploy:
   bucket_path:  "ReactProjectDevOPS"
   on:
     branch: master
-  access_key_id: $AWS-Elasticbeanstalk-AccessKey
-  secret_access_key: $AWS-Elasticbeanstalk-SecretKey
+  access_key_id: $AWSElasticBeanStalkAccessKey
+  secret_access_key: $AWSElasticBeanStalkSecretKey
     
 
 
